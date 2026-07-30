@@ -1,18 +1,23 @@
 # Threat Intelligence Collection using OSINT
 # Kali Linux
 import subprocess
-print(&quot;=======================================&quot;)
-print(&quot; OSINT Threat Intelligence Collection&quot;)
-print(&quot;=======================================\n&quot;)
-domain = input(&quot;Enter Target Domain: &quot;)
-print(&quot;\n========== WHOIS Information ==========\n&quot;)
+
+print("=======================================")
+print(" OSINT Threat Intelligence Collection")
+print("=======================================\n")
+
+domain = input("Enter Target Domain: ")
+
+print("\n========== WHOIS Information ==========\n")
 try:
-subprocess.run([&quot;whois&quot;, domain])
-except:
-print(&quot;WHOIS command not found.&quot;)
-print(&quot;\n========== DNS Information ==========\n&quot;)
+    subprocess.run(["whois", domain])
+except Exception as e:
+    print(f"WHOIS command failed or not found: {e}")
+
+print("\n========== DNS Information ==========\n")
 try:
-subprocess.run([&quot;dig&quot;, domain])
-except:
-print(&quot;DIG command not found.&quot;)
-print(&quot;\nThreat Intelligence Collection Completed.&quot;)
+    subprocess.run(["dig", domain])
+except Exception as e:
+    print(f"DIG command failed or not found: {e}")
+
+print("\nThreat Intelligence Collection Completed.")
