@@ -1,0 +1,23 @@
+Aim
+To perform static malware analysis by extracting file hashes, examining file metadata and scanning for embedded text strings (such as IP addresses, domains, or functions) without executing the code. 
+Algorithm
+1.Start the terminal
+2.Set the filenames for the target sample (TARGET) and the output file (LOG_FILE).
+3.Check if the target file exists; if missing, create a mock binary file containing sample indicators.
+4.Open the target file in binary read mode and store its complete byte data.
+5.Pass the file bytes through the MD5 hashing algorithm to generate a unique 32-character fingerprint.
+6.Pass the file bytes through the SHA-256 algorithm to generate a highly secure 64-character fingerprint.
+7.Use regular expressions to scan the file bytes for sequences of 4 or more printable ASCII characters.
+8.Convert the discovered raw byte sequences into readable, plain text string data.
+9.Write the file size, calculated hashes, and extracted text strings into a structured text report.
+10.end the program
+Output
+File Size: 68 bytes
+MD5: a35164a35ac90cd743bfae553c86fa41
+SHA256: b18c65f1aa52db96bb0aa801cf5fe55cc73d9ae1749c08cdafe37f53532d56f6
+
+[Strings Found]
+ -> MZ Header
+ -> IP: 192.168.1.105
+ -> URL: malicious-cnc.com
+ -> API: VirtualAlloc
