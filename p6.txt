@@ -1,0 +1,20 @@
+Aim
+To understand the basics of malware analysis in a controlled virtual environment by identifying the type of malware based on its observed behavior using a simple Python program.
+Algorithm
+Start the program. 
+Create a dictionary containing malware names and their corresponding malware types. 
+Create a list of malware samples to be analyzed. 
+Read each malware sample from the list. 
+Search for the malware in the dictionary. 
+Display the malware name and its identified type. 
+If the malware is not found, display "Unknown Malware – Requires Further Analysis." 
+Stop the program. 
+ Output
+========== Malware Analysis Report ==========
+
+WannaCry            --> Ransomware
+Zeus                --> Banking Trojan
+Mirai               --> Botnet Malware
+Pegasus             --> Spyware
+UnknownSample       --> Unknown Malware - Requires Further Analysis
+
