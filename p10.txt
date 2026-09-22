@@ -1,0 +1,54 @@
+Aim
+
+Malware detection using antivirus and threat intelligence platforms .
+
+Algorithm
+
+1. Start the program.
+
+2. Ask the user to enter the file name.
+
+3. Check whether the file exists.
+
+4. Calculate the SHA-256 hash of the file.
+
+5. Compare the file hash with a small database of known malicious hashes.
+
+6. Check the file extension and basic suspicious characteristics.
+
+7. If the hash matches a known malicious file, mark it as Malware.
+
+8. If suspicious characteristics are found, mark it as Suspicious.
+
+9. Otherwise, mark it as Safe.
+
+10.Display the detection result.
+
+11.Stop the program.
+
+Output 1 – Safe File
+Enter the file name: document.txt
+
+File: document.txt
+SHA-256 Hash: 8a5f...example...91c2
+
+Result: SAFE
+Threat Intelligence: No known malicious hash found
+
+Output 2 – Suspicious File
+Enter the file name: unknown.exe
+
+File: unknown.exe
+SHA-256 Hash: 72ab...example...43ef
+
+Result: SUSPICIOUS FILE
+Reason: Executable or script file
+
+ Output 3 – Malware Detected
+Enter the file name: malware.exe
+
+File: malware.exe
+SHA-256 Hash: 44d88612fea8a8f36de82e1278abb02f
+
+Result: MALWARE DETECTED
+Threat Intelligence: Known malicious file

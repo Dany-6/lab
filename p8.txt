@@ -1,0 +1,24 @@
+Aim:To safely run a suspicious program in a test environment, watch for any new programs it
+opens, and save a list of those programs to a file.
+
+Algorithm
+
+1. Start the terminal
+
+2. Choose the file to test, name the report file and decide how long to watch it
+3. Check if the test file exists; if it is missing, create a fake one that opens the calculator for
+testing.
+4. Make a list of all programs currently running on the computer before starting.
+5. Start the suspicious file in the background so it can be watched while it runs.
+6. Keep checking the computer every half-second to see if any new programs appear.
+7. If any new program is found that was not in the original snapshot, add its name to a list.
+8. Close the suspicious file automatically as soon as the watch timer runs out.
+9. Save the names of all the newly found programs into a text file report.
+
+Output
+sandbox_report.txt 
+SANDBOX REPORT FOR: suspicious_payload.exe
+==============================
+ -> Spawned Process: cmd.exe
+ -> Spawned Process: calc.exe
+ -> Spawned Process: CalculatorApp.exe
