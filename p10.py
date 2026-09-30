@@ -1,10 +1,10 @@
 import hashlib
 import os
 
-# Small threat intelligence database
-# These are example hashes for demonstration.
+# Updated threat intelligence database with correct SHA-256 hashes
 KNOWN_MALWARE_HASHES = {
-    "44d88612fea8a8f36de82e1278abb02f": "Example Malware"
+    "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f": "EICAR Anti-Virus Test File",
+    "24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c": "WannaCry Ransomware"
 }
 
 def calculate_hash(filename):
@@ -13,17 +13,18 @@ def calculate_hash(filename):
     with open(filename, "rb") as file:
         while True:
             data = file.read(4096)
-
             if not data:
                 break
-
             sha256.update(data)
+            
     return sha256.hexdigest()
+
 def detect_malware(filename):
     # Check whether file exists
     if not os.path.exists(filename):
         print("File not found!")
         return
+        
     # Calculate SHA-256 hash
     file_hash = calculate_hash(filename)
 
@@ -33,13 +34,15 @@ def detect_malware(filename):
     # Threat intelligence check
     if file_hash in KNOWN_MALWARE_HASHES:
         print("Result: MALWARE DETECTED")
-        print("Threat Intelligence: Known malicious file")
+        print(f"Threat Intelligence: Known malicious file ({KNOWN_MALWARE_HASHES[file_hash]})")
         return
+        
     # Basic suspicious file check
     suspicious_extensions = [
         ".exe", ".bat", ".cmd", ".vbs", ".scr"
     ]
     extension = os.path.splitext(filename)[1].lower()
+    
     if extension in suspicious_extensions:
         print("Result: SUSPICIOUS FILE")
         print("Reason: Executable or script file")
