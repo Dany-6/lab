@@ -1,7 +1,7 @@
 import hashlib
 import os
 
-s
+# Updated threat intelligence database with correct SHA-256 hashes
 KNOWN_MALWARE_HASHES = {
     "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f": "EICAR Anti-Virus Test File",
     "24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c": "WannaCry Ransomware"
@@ -25,7 +25,7 @@ def detect_malware(filename):
         print("File not found!")
         return
         
-
+    # Calculate SHA-256 hash
     file_hash = calculate_hash(filename)
 
     print("\nFile:", filename)
@@ -37,7 +37,7 @@ def detect_malware(filename):
         print(f"Threat Intelligence: Known malicious file ({KNOWN_MALWARE_HASHES[file_hash]})")
         return
         
-  
+    # Basic suspicious file check
     suspicious_extensions = [
         ".exe", ".bat", ".cmd", ".vbs", ".scr"
     ]
@@ -50,6 +50,6 @@ def detect_malware(filename):
         print("Result: SAFE")
         print("Threat Intelligence: No known malicious hash found")
 
-
+# Main program
 filename = input("Enter the file name: ")
 detect_malware(filename)
