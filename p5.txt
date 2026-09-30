@@ -1,0 +1,26 @@
+Aim
+To study the Cyber Kill Chain Model and develop a Python program that identifies the stages of a cyber attack based on observed threat events, thereby assisting in cyber threat investigation.
+
+Algorithm
+
+1. Start the program.
+2. Create a dictionary containing common cyber events and their corresponding Cyber Kill
+Chain stages.
+3. Accept a list of observed threat events.
+4. Compare each event with the predefined dictionary.
+5. Identify the corresponding Kill Chain stage.
+6. Display the event along with its mapped stage.
+7. If an event is not found, display "Unknown Stage - Requires Further Investigation."
+8. Stop the program.
+
+Output
+========== Cyber Kill Chain Investigation ==========
+
+Observed Threat Events:
+
+Network Scanning              --> Reconnaissance
+Email Phishing                --> Weaponization / Delivery
+Exploit Executed              --> Exploitation
+Malware Installed             --> Installation
+Command and Control Traffic   --> Command and Control (C2)
+Data Exfiltration             --> Actions on Objectives

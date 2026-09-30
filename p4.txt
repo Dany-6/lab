@@ -1,0 +1,82 @@
+4.Threat Intelligence Collection using Open Source Intelligence (OSINT) in Kali Linux
+Aim
+To collect cyber threat intelligence using Open Source Intelligence (OSINT) tools available in Kali Linux by gathering publicly available information such as domain details, IP addresses, DNS records, and WHOIS information.
+
+sudo apt update
+sudo apt install whois
+sudo apt install dnsutils
+
+Algorithm
+Step 1
+Open Kali Linux Terminal.
+Step 2
+Install the required packages (whois and dnsutils) if they are not already installed.
+Step 3
+Create a Python program named osint_collection.py.
+Step 4
+Import the required Python modules (subprocess).
+Step 5
+Ask the user to enter a target domain name (for example, example.com).
+Step 6
+Execute the WHOIS command to collect:
+Domain owner details 
+Registrar information 
+Registration date 
+Expiry date 
+Name servers 
+Step 7
+Execute the DIG command to retrieve:
+IP Address 
+DNS Records 
+Mail Server (MX) 
+Name Server (NS) 
+Step 8
+Display the collected intelligence on the screen.
+Step 9
+Analyze the information to identify useful threat intelligence such as:
+Domain ownership 
+Hosting details 
+DNS configuration 
+Server information 
+Step 10
+End the program.
+ 
+
+Execution
+Save the program as:
+osint_collection.py
+Run the program:
+python3 osint_collection.py
+
+Sample Input
+Enter Target Domain: google.com
+
+Sample Output
+=======================================
+ OSINT Threat Intelligence Collection
+=======================================
+
+Enter Target Domain: google.com
+
+========== WHOIS Information ==========
+
+Domain Name: GOOGLE.COM
+Registrar: MarkMonitor Inc.
+Creation Date: 1997-09-15
+Expiry Date: 2028-09-14
+Name Server:
+NS1.GOOGLE.COM
+NS2.GOOGLE.COM
+
+========== DNS Information ==========
+
+;; ANSWER SECTION:
+google.com. 300 IN A 142.250.183.110
+
+;; Query time: 18 msec
+
+Threat Intelligence Collection Completed.
+
+
+Result
+The OSINT information for the target domain was successfully collected using WHOIS and DIG tools in Kali Linux, providing domain registration details, DNS records, IP addresses, and name server information for cybersecurity analysis.

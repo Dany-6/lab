@@ -1,0 +1,41 @@
+1. Identifying and Classifying Cyber Threats in a Network Environment
+
+Aim
+
+To identify and classify cyber threats in a network environment by analyzing network traffic and
+categorizing suspicious activities based on predefined threat patterns.
+
+Algorithm
+
+1. Start the program.
+2. Create a list named network_events containing various network activities.
+3. Read each event from the network_events list one by one.
+4. Check whether the event contains the phrase "failed login".
+o If yes, classify the threat as Unauthorized Access.
+5. Otherwise, check whether the event contains the phrase "high traffic".
+o If yes, classify the threat as Denial of Service (DoS).
+6. Otherwise, check whether the event contains the phrase "malicious attachment".
+o If yes, classify the threat as Malware.
+7. Otherwise, check whether the event contains the phrase "fake email".
+o If yes, classify the threat as Phishing.
+8. If none of the above conditions are satisfied, classify the event as Normal Traffic.
+9. Display the network event and its corresponding threat category.
+10. Repeat the above steps until all events in the list have been processed.
+11. Stop the program.
+
+Output
+Network Event: multiple failed login attempts
+Threat Category: Unauthorized Access
+
+Network Event: high traffic volume
+Threat Category: Denial of Service (DoS)
+
+Network Event: malicious attachment detected
+Threat Category: Malware
+
+Network Event: fake email requesting credentials
+Threat Category: Phishing
+
+Network Event: normal web browsing
+Threat Category: Normal Traffic
+

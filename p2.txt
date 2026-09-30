@@ -1,0 +1,48 @@
+Analyzing Attack Vectors and Vulnerabilities in
+Web Applications
+
+Aim
+
+To analyze common attack vectors and identify vulnerabilities present in web
+applications using a simple Cyber Threat Intelligence approach.
+
+Algorithm
+
+1. Start the program.
+2. Create a list of web application events (web_events).
+3. Read each event from the list one by one.
+4. Check whether the event contains an SQL query pattern.
+a. If yes, classify it as SQL Injection Vulnerability.
+5. Otherwise, check whether the event contains a script tag.
+a. If yes, classify it as Cross-Site Scripting (XSS).
+6. Otherwise, check whether the event contains multiple failed login attempts.
+a. If yes, classify it as a Brute Force Attack.
+7. Otherwise, check whether the event contains a file upload without
+validation.
+a. If yes, classify it as an Unrestricted File Upload Vulnerability.
+8. If none of the above conditions are satisfied, classify it as No Threat
+Detected.
+9. Display the event and its corresponding threat classification.
+10.Repeat the process for all events in the list.
+11. Stop the program.
+
+Output
+Event: SQL query with user input
+Threat Identified: SQL Injection Vulnerability
+-----------------------------
+
+Event: script tag detected in input field
+Threat Identified: Cross Site Scripting (XSS)
+-----------------------------
+
+Event: multiple failed login attempts
+Threat Identified: Brute Force Attack
+-----------------------------
+
+Event: file upload without validation
+Threat Identified: Unrestricted File Upload Vulnerability
+-----------------------------
+
+Event: normal page request
+Threat Identified: No Threat Detected
+-----------------------------
